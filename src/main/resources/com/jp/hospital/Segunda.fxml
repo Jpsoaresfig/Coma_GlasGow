@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Text?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #BDFCC9;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.jp.hospital.SecondaryController">
+   <children>
+      <AnchorPane layoutY="-2.0" prefHeight="403.0" prefWidth="578.0">
+         <children>
+            <Text layoutX="39.0" layoutY="42.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Abertura ocular" />
+            <Line endX="-92.40000915527344" endY="-51.99999237060547" layoutX="230.0" layoutY="80.0" startX="-92.40000915527344" startY="319.9999694824219" />
+            <Text layoutX="151.0" layoutY="42.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Resposta Verbal" wrappingWidth="91.199951171875" />
+            <Line endX="-56.80000305175781" endY="324.1000061035156" layoutX="300.0" layoutY="77.0" startX="-56.80000305175781" startY="-48.20000457763672" />
+            <Text layoutX="251.0" layoutY="42.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Resposta motora" wrappingWidth="98.72381591796875" />
+            <Line endX="-51.27618408203125" endY="315.8999938964844" layoutX="401.0" layoutY="86.0" startX="-51.27618408203125" startY="-56.94921112060547" />
+            <Text layoutX="361.0" layoutY="42.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Reatividade pupilar" />
+            <RadioButton fx:id="AB4" layoutX="14.0" layoutY="62.0" mnemonicParsing="false" text="Espontânea +4">
+               <toggleGroup>
+                  <ToggleGroup fx:id="aberturaOcular" />
+               </toggleGroup></RadioButton>
+            <RadioButton fx:id="AB3" layoutX="14.0" layoutY="90.0" mnemonicParsing="false" text="Verbal +3" toggleGroup="$aberturaOcular" />
+            <RadioButton fx:id="AB2" layoutX="14.0" layoutY="116.0" mnemonicParsing="false" text="Dor +2" toggleGroup="$aberturaOcular" />
+            <RadioButton fx:id="AB1" layoutX="14.0" layoutY="143.0" mnemonicParsing="false" text="Sem abertura +1" toggleGroup="$aberturaOcular" />
+            <RadioButton fx:id="RV5" layoutX="144.0" layoutY="62.0" mnemonicParsing="false" text="Orientado +5">
+               <toggleGroup>
+                  <ToggleGroup fx:id="respostaVerbal" />
+               </toggleGroup></RadioButton>
+            <RadioButton fx:id="RV4" layoutX="144.0" layoutY="90.0" mnemonicParsing="false" text="Confuso +4" toggleGroup="$respostaVerbal" />
+            <RadioButton fx:id="RV3" layoutX="145.0" layoutY="116.0" mnemonicParsing="false" text="xingar +3" toggleGroup="$respostaVerbal" />
+            <RadioButton fx:id="RV2" layoutX="145.0" layoutY="143.0" mnemonicParsing="false" text="Gemidos +2" toggleGroup="$respostaVerbal" />
+            <RadioButton fx:id="RP2" layoutX="368.0" layoutY="62.0" mnemonicParsing="false" text="Nenhuma atividade -2">
+               <toggleGroup>
+                  <ToggleGroup fx:id="reatividadePupilar" />
+               </toggleGroup></RadioButton>
+            <RadioButton fx:id="RM6" layoutX="251.0" layoutY="62.0" mnemonicParsing="false" text="Obedece +6">
+               <toggleGroup>
+                  <ToggleGroup fx:id="respostaMotora" />
+               </toggleGroup></RadioButton>
+            <RadioButton fx:id="RM5" layoutX="251.0" layoutY="90.0" mnemonicParsing="false" text="Loc. a dor+5" toggleGroup="$respostaMotora" />
+            <RadioButton fx:id="RM4" layoutX="251.0" layoutY="116.0" mnemonicParsing="false" text="Afs. a dor +4" toggleGroup="$respostaMotora" />
+            <RadioButton fx:id="RM3" layoutX="251.0" layoutY="143.0" mnemonicParsing="false" text="Flex. a dor +3" toggleGroup="$respostaMotora" />
+            <RadioButton fx:id="RM2" layoutX="251.0" layoutY="167.0" mnemonicParsing="false" text="Exst. a dor +2" toggleGroup="$respostaMotora" />
+            <RadioButton fx:id="RP1" layoutX="369.0" layoutY="90.0" mnemonicParsing="false" text="Unilateral -1" toggleGroup="$reatividadePupilar" />
+            <RadioButton fx:id="RP0" layoutX="369.0" layoutY="116.0" mnemonicParsing="false" text="Reativ.  bilateral 0" toggleGroup="$reatividadePupilar" />
+            <RadioButton fx:id="RM1" layoutX="251.0" layoutY="192.0" mnemonicParsing="false" text="Sem resp +1" toggleGroup="$respostaMotora" />
+            <RadioButton fx:id="RV1" layoutX="145.0" layoutY="167.0" mnemonicParsing="false" text="Sem som +1" toggleGroup="$respostaVerbal" />
+            <Button fx:id="Result" layoutX="363.0" layoutY="178.0" mnemonicParsing="false" onAction="#calculateResult" prefHeight="26.0" prefWidth="99.0" style="-fx-background-radius: 50;" text="Resultado" />
+            <TextArea fx:id="campresult" layoutX="374.0" layoutY="262.0" prefHeight="103.0" prefWidth="163.0" />
+            <Label fx:id="nomep" alignment="CENTER" layoutX="183.0" layoutY="6.0" prefHeight="18.0" prefWidth="182.0" text="Nome paciente: " />
+            <Label fx:id="labelNome" layoutX="324.0" layoutY="7.0" prefHeight="18.0" prefWidth="140.0" text="exemplo" />
+            <Label fx:id="resulltfinal" layoutX="374.0" layoutY="215.0" prefHeight="26.0" prefWidth="154.0" text="Result:" textAlignment="CENTER" />
+            <Text layoutX="370.0" layoutY="254.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Anotações adicionais:" />
+            <Button fx:id="finalizar" layoutX="426.0" layoutY="365.0" mnemonicParsing="false" style="-fx-border-radius: 90%;" text="Finalizar" />
+         </children>
+      </AnchorPane>
+   </children>
+</Pane>
