@@ -1,5 +1,12 @@
 package com.jp.hospital;
 
+import java.io.BufferedWriter;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.PrintWriter;
+import javafx.stage.FileChooser;
+import java.io.File;
+
 import java.net.URL;
 import java.util.ResourceBundle;
 
@@ -73,7 +80,10 @@ public class SecondaryController implements Initializable {
     private Button Result;
 
     @FXML
-    private TextArea campresult;
+    private TextArea infoadd;
+
+    @FXML
+    private Button finalizar;
 
     @FXML
     private Label resulltfinal;
@@ -86,12 +96,35 @@ public class SecondaryController implements Initializable {
     @FXML
     void calculateResult(ActionEvent event) {
         int somaValores = sumSelectedValues();
-        resulltfinal.setText(String.valueOf("Resultado: "+somaValores));
+        resulltfinal.setText("Resultado: " + somaValores);
     }
-    
+
+    @FXML
+    private void finalize(ActionEvent event) {
+        String info = infoadd.getText();
+
+        FileChooser fileChooser = new FileChooser();
+        fileChooser.setTitle("Salvar Arquivo");
+        fileChooser.getExtensionFilters().add(new FileChooser.ExtensionFilter("Arquivos de Texto", "*.txt"));
+
+        File file = fileChooser.showSaveDialog(null);
+
+        if (file != null) {
+            try (PrintWriter writer = new PrintWriter(new BufferedWriter(new FileWriter(file)))) {
+                writer.println("Nome: " + PrimaryController.nome);
+                writer.println("Informações adicionais: " + info);
+                writer.println("Resultado: " + resulltfinal.getText());
+
+                System.out.println("Arquivo salvo com sucesso.");
+            } catch (IOException e) {
+                System.err.println("Erro ao salvar o arquivo: " + e.getMessage());
+            }
+        }
+    }
+
     private int sumSelectedValues() {
         int somaValores = 0;
-    
+
         if (AB1.isSelected()) {
             somaValores += 1;
         }
@@ -104,7 +137,7 @@ public class SecondaryController implements Initializable {
         if (AB4.isSelected()) {
             somaValores += 4;
         }
-    
+
         if (RV1.isSelected()) {
             somaValores += 1;
         }
@@ -120,7 +153,7 @@ public class SecondaryController implements Initializable {
         if (RV5.isSelected()) {
             somaValores += 5;
         }
-    
+
         if (RM1.isSelected()) {
             somaValores += 1;
         }
@@ -139,7 +172,7 @@ public class SecondaryController implements Initializable {
         if (RM6.isSelected()) {
             somaValores += 6;
         }
-    
+
         if (RP0.isSelected()) {
             somaValores += 0;
         }
@@ -149,11 +182,7 @@ public class SecondaryController implements Initializable {
         if (RP2.isSelected()) {
             somaValores -= 2;
         }
-    
+
         return somaValores;
     }
-    
-
-    
-
 }

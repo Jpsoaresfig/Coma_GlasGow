@@ -59,12 +59,12 @@
             <RadioButton fx:id="RM1" layoutX="251.0" layoutY="192.0" mnemonicParsing="false" text="Sem resp +1" toggleGroup="$respostaMotora" />
             <RadioButton fx:id="RV1" layoutX="145.0" layoutY="167.0" mnemonicParsing="false" text="Sem som +1" toggleGroup="$respostaVerbal" />
             <Button fx:id="Result" layoutX="401.0" layoutY="179.0" mnemonicParsing="false" onAction="#calculateResult" prefHeight="26.0" prefWidth="99.0" style="-fx-background-radius: 50;" text="Resultado" />
-            <TextArea fx:id="campresult" layoutX="374.0" layoutY="262.0" prefHeight="103.0" prefWidth="163.0" />
+            <TextArea fx:id="infoadd" layoutX="374.0" layoutY="262.0" prefHeight="103.0" prefWidth="163.0" />
             <Label fx:id="nomep" alignment="CENTER" layoutX="183.0" layoutY="6.0" prefHeight="18.0" prefWidth="182.0" text="Nome paciente: " />
             <Label fx:id="labelNome" layoutX="316.0" layoutY="6.0" prefHeight="18.0" prefWidth="140.0" text="exemplo" />
             <Label fx:id="resulltfinal" layoutX="374.0" layoutY="215.0" prefHeight="26.0" prefWidth="154.0" text="Result:" textAlignment="CENTER" />
             <Text layoutX="370.0" layoutY="254.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Anotações adicionais:" />
-            <Button fx:id="finalizar" layoutX="426.0" layoutY="365.0" mnemonicParsing="false" style="-fx-border-radius: 90%;" text="Finalizar" />
+            <Button fx:id="finalizar" layoutX="426.0" layoutY="365.0" mnemonicParsing="false" onAction="#finalize" style="-fx-border-radius: 90%;" text="Finalizar" />
          </children>
       </AnchorPane>
    </children>
