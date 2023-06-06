@@ -113,7 +113,7 @@ public class SecondaryController implements Initializable {
             try (PrintWriter writer = new PrintWriter(new BufferedWriter(new FileWriter(file)))) {
                 writer.println("Nome: " + PrimaryController.nome);
                 writer.println("Informações adicionais: " + info);
-                writer.println("Resultado: " + resulltfinal.getText());
+                writer.println(  resulltfinal.getText());
 
                 System.out.println("Arquivo salvo com sucesso.");
             } catch (IOException e) {

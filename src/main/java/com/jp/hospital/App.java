@@ -16,6 +16,8 @@ public class App extends Application {
     public void start(Stage stage) throws IOException {
         primaryStage = stage;
         primaryStage.setScene(createScene("primary.fxml"));
+        primaryStage.setTitle("Glasgow");
+        primaryStage.setResizable(false); // Impede que a janela seja redimensionada
         primaryStage.show();
     }
 
@@ -29,9 +31,8 @@ public class App extends Application {
         return new Scene(root);
     }
 
-
-
     public static void main(String[] args) {
         launch();
     }
 }
+
